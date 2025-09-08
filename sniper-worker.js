@@ -10,8 +10,7 @@ const cors = require('cors');
 const { Connection, PublicKey } = require('@solana/web3.js');
 const TelegramBot = require('node-telegram-bot-api');
 require('dotenv').config();
-
-const RPC_URL = process.env.RPC_URL || 'https://api.mainnet-beta.solana.com';
+const RPC_URL = 'https://flashy-aged-resonance.solana-mainnet.quiknode.pro/56802796f2acaa8919808e6762e69be13ddd5400/';
 const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN || '';
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '';
 const CHECK_INTERVAL_MS = parseInt(process.env.CHECK_INTERVAL_MS || '5000', 10); // default 5s
@@ -21,7 +20,6 @@ const MIN_HOLDERS = parseInt(process.env.MIN_HOLDERS || '20', 10);
 const TOP10_LIMIT_PCT = parseFloat(process.env.TOP10_LIMIT_PCT || '20'); // top10 > this% -> ignore
 const DEV_HOLDING_LIMIT_PCT = parseFloat(process.env.DEV_HOLDING_LIMIT_PCT || '5'); // dev holding > this% -> dev-in
 const AI_KEYWORDS = (process.env.AI_KEYWORDS || 'AI,GPT,LLM,GenAI,Neural,Model,Agent').split(',');
-
 const PORT = parseInt(process.env.PORT || '7000', 10);
 
 const connection = new Connection(RPC_URL, 'confirmed');
